@@ -181,3 +181,84 @@ footer {
   margin-top: 4rem;
   border-top: 1px solid #333;
 }
+
+.product-hero {
+  padding: 4rem 1rem;
+  background: #1a1a1a;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.main-image {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.product-info h1 {
+  color: #f1c40f;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e74c3c;
+  margin-bottom: 1.5rem;
+}
+
+.back-link {
+  color: #c0392b;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.back-link:hover {
+  color: #e74c3c;
+}
+
+.specs ul {
+  list-style: none;
+  background: #2c2c2c;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.specs li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
+}
+
+.specs li:last-child {
+  border-bottom: none;
+}
+/* More Info button on product cards */
+.more-info-btn {
+  display: inline-block;
+  background: #c0392b;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  margin: 10px 10px 10px 0;
+  transition: all 0.3s;
+}
+
+.more-info-btn:hover {
+  background: #e74c3c;
+  transform: scale(1.05);
+}
+
+/* Make sure buttons in product cards don't overlap */
+.product-card button,
+.product-card .more-info-btn {
+  margin-top: 8px;
+}
