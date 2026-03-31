@@ -262,3 +262,34 @@ footer {
 .product-card .more-info-btn {
   margin-top: 8px;
 }
+
+/* Alexi price hidden state */
+#alexi-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  min-height: 1.8rem; /* Prevents layout jump */
+}
+
+.price-hidden {
+  color: #888;
+  font-style: italic;
+  cursor: pointer;
+  user-select: none;
+}
+
+.revealed-price {
+  color: #e74c3c; /* Red price like other products */
+  font-style: normal;
+}
+
+/* Style the Alexi More Info button */
+#alexi-more-btn {
+  background: #c0392b;
+  margin: 10px 0;
+}
+
+#alexi-more-btn:hover {
+  background: #e74c3c;
+}
