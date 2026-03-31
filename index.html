@@ -32,30 +32,44 @@
   <section class="products container">
     <h3>Featured Products</h3>
     <div class="product-grid">
+
+      <!-- EVH Wolfgang -->
       <div class="product-card">
         <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_51/510888/19069200_800.jpg" alt="EVH Wolfgang" />
         <h4>EVH Wolfgang WG Std QM TG</h4>
         <p>639 €</p>
-        <button>Add to Cart</button>
+        <a href="wolfgang.html" class="more-info-btn">More Info</a>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
+
+      <!-- Jackson Soloist -->
       <div class="product-card">
         <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_51/511593/15898873_800.jpg" alt="Jackson Soloist" />
         <h4>Jackson SLXM DX Soloist X Series SWH</h4>
         <p>709 €</p>
-        <button>Add to Cart</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
-      <div class="product-card">
+
+      <!-- ESP Alexi Laiho with Faaah! -->
+      <div class="product-card" id="alexi-card">
         <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_63/633177/20785087_800.jpg" alt="ESP Alexi Laiho" />
         <h4>ESP Original Alexi Laiho GR/BL</h4>
-        <p>6.399 €</p>
-        <button>Add to Cart</button>
+        
+        <p id="alexi-price" class="price-hidden">Inquire for Price</p>
+        
+        <button id="alexi-more-btn" class="more-info-btn">Click for Price</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
+
+
+      <!-- ESP LTD TE-200 -->
       <div class="product-card">
         <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_38/385455/19970091_800.jpg" alt="ESP LTD TE-200" />
         <h4>ESP LTD TE-200 SW</h4>
         <p>529 €</p>
-        <button>Add to Cart</button>
+        <button class="add-to-cart-btn">Add to Cart</button>
       </div>
+
     </div>
   </section>
 </main>
@@ -69,6 +83,37 @@
     <p>&copy; 2026 Shredders.net. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- Faaah! Sound -->
+<audio id="faah-sound" preload="auto">
+  <source src="https://www.myinstants.com/media/sounds/faaah.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const priceElement = document.getElementById('alexi-price');
+  const moreBtn = document.getElementById('alexi-more-btn');
+  const faahSound = document.getElementById('faah-sound');
+
+  moreBtn.addEventListener('click', function() {
+    // Play Faaah! sound
+    faahSound.currentTime = 0;
+    faahSound.play().catch(() => {
+      // Sound blocked by browser - still show price
+      console.log("Faaah! sound blocked by browser");
+    });
+
+    // Reveal price
+    priceElement.textContent = '6.399 €';
+    priceElement.classList.remove('price-hidden');
+    priceElement.classList.add('revealed-price');
+
+    // Update button
+    moreBtn.textContent = 'More Info';
+    moreBtn.style.backgroundColor = '#27ae60';
+    moreBtn.style.pointerEvents = 'none';
+  });
+</script>
 
 </body>
 </html>
